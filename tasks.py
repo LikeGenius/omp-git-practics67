@@ -6,26 +6,26 @@
 
 
 def fizzbuzz(n):
-    """Вернуть "FizzBuzz", если n делится на 3 и на 5, "Fizz" — только на 3,
-    "Buzz" — только на 5, иначе само число строкой.
+    if n % 3 == 0 and n % 5 == 0:
+        return "FizzBuzz"
+    elif n % 3 == 0:
+        return "Fizz"
+    elif n % 5 == 0:
+        return "Buzz"
+    else:
+        return str(n)
 
-    Примеры:
-        fizzbuzz(9) -> "Fizz"
-        fizzbuzz(10) -> "Buzz"
-        fizzbuzz(15) -> "FizzBuzz"
-        fizzbuzz(7) -> "7"
-    """
-    # Реализовал(а): ...
-    raise NotImplementedError
-
+# Реализовал Дмитрий Караулов
 
 def is_prime(n):
-    """Вернуть True, если n — простое число (больше 1 и делится только на 1 и на себя).
+    for i in range(2, int(n**0.5)+1):
+        d = set()
+        if n % i == 0:
+            d.add(i)
+            d.add(n // i)
+    if len(d) == 0:
+        return True
+    else:
+        return False
 
-    Примеры:
-        is_prime(13) -> True
-        is_prime(9) -> False
-        is_prime(1) -> False
-    """
-    # Реализовал(а): ...
-    raise NotImplementedError
+# Реализовал Дмитрий Караулов
